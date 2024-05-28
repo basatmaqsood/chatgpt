@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-size: 62.5%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: rgb(3, 0, 31);
+  color: white;
+  font-family: "Poppins", sans-serif;
 }
-
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+}
+.main {
+  flex: 9;
+}
+.sidebar {
+  flex: 3;
+  border-right: 1px solid rgb(100, 100, 1000);
+  padding: 1rem;
+}
+.logo {
+  margin-right: 1rem;
+}
+.brand {
+  font-size: 2rem;
+}
+.upperSide {
+  padding: 2.5rem;
+  border-bottom: 1px solid rgb(100, 100, 1000);
+  height: 70%;
+}
+.uppersideTop {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.midbtn {
+  border: none;
+  background-color: #5a4bff;
+  color: #fff;
+  width: 25rem;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+}
+.addbtn {
+  padding-right: 1rem;
+  height: 2rem;
+}
+.query {
+    cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: rgba(222,222,222,1);
+  padding: 1.5rem;
+  width: 25rem;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(98,98,98,1);
+  gap: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.lowerside {
+  padding: 2.5rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.listitem{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    font-size: 1.5rem;
+    gap: 1.5rem;
+    padding: 1rem;
 }
