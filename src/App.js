@@ -7,8 +7,31 @@ import saved from "./assets/bookmark.svg";
 import rocket from "./assets/rocket.svg";
 import sendBtn from "./assets/send.svg";
 import userIcon from "./assets/user-icon.png";
+import gptLogoImg from "./assets/chatgptLogo.svg";
+import { getGPTResponse } from "./openai";
+import { useState } from "react";
 
 function App() {
+  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState([{
+      text: "Hey there ! How can I help you ?",
+      isBot: true,
+    }
+  ]);
+  console.log(messages);
+  // getGPTResponse("hi! how are you?");
+   async function handleSend() {
+    if (input === "") return;
+    const text = input;
+    setInput("");
+    setMessages([...messages, { text, isBot: false }]);
+    const res = await getGPTResponse(text);
+    console.log(res);
+    setMessages([...messages,{text,isBot:false}, { text: res, isBot: true }]);
+  }
+
+
+  
   return (
     <div className="app">
       <div className="sidebar">
@@ -48,10 +71,34 @@ function App() {
         </div>
       </div>
       <div className="main">
-        <div className="chats"></div>
+        <div className="chats custom-scrollbar">
+          {messages.map((message, index) => {
+            return (
+              <div key={index} className={message.isBot ? "chat bot" : "chat"}>
+              <img className="chatImg" src={message.isBot?gptLogoImg :userIcon} alt="" />
+              <p>{message.text}</p>
+            </div>
+            )
+          })}
+        </div>
         <div className="chatsfooter">
           <div className="input">
-            <input type="text" placeholder="Send a Message"/> <button className="send"><img src={sendBtn} alt="" /></button>
+            <input
+              type="text"
+              placeholder="Send a Message"
+              value={input}
+              onChange={(e) => {
+                setInput(e.target.value);
+              }}
+            />{" "}
+            <button
+              className="send"
+              onClick={() => {
+                handleSend();
+              }}
+            >
+              <img src={sendBtn} alt="" />
+            </button>
           </div>
         </div>
       </div>

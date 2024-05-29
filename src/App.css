@@ -84,3 +84,97 @@ body {
     gap: 1.5rem;
     padding: 1rem;
 }
+
+.main{
+  display: flex;min-height: calc(100vh - 14rem);
+  align-items: center;
+  flex-direction: column;
+  margin: 6rem 10rem;
+}
+.chatsfooter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: auto;
+}
+.input{
+  padding: 1.2rem;
+  background-color: rgba(28, 30, 58, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.input>input, .send{
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.send{
+  cursor: pointer;
+}
+.input>input{
+  font-size: 1.7rem;
+  width: 95%;
+  color: white;
+}
+
+.chats{
+  overflow: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  width: 100%;
+  height: calc(100vh - 17rem);
+  max-width: 70rem;
+}
+.chat{
+  margin: 1rem;
+  padding: 2rem 3rem;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-align: justify;
+}
+.chatImg{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1rem;
+}
+.bot{
+  background-color: rgba(28, 30, 58, 1);
+  border-radius: 1rem;
+}
+
+
+
+
+
+
+/* For a specific div with class 'custom-scrollbar' */
+.custom-scrollbar {
+  scrollbar-width:thin;
+  scrollbar-color: #ebe4e4 transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  border: 2px solid #555;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
